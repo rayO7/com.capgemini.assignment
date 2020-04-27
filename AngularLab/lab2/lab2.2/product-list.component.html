@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <div class="container jumbotron w-50 p-2 bg-dark" align ="center">
+          <table class="table table-hover table-line col-sm-5 table-light table-bordered">
+              <tr>
+                <th align="center"><a (click)="sortID()">ID</a></th>
+                <th align="center"><a (click)="sortNAME()">NAME</a></th>
+                <th align="center"><a (click)="sortCOST()">COST</a></th>
+               </tr>
+
+            <tbody>
+              <tr *ngFor="let product of PList">
+                <td>{{product.prodId}}</td>
+                <td>{{product.prodName}}</td>
+                <td>{{product.prodCost}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </body>
+  </html>

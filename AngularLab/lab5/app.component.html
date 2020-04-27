@@ -1,0 +1,403 @@
+
+<!-- //------------LAB1------------- -->
+<!-- <h1>Angular 2 Operations</h1>
+<h3>Rishabh Pandey</h3>
+<div class="container">
+
+  <h2>Form :</h2>
+
+  <div class="container"></div>
+
+  <form #f="ngForm" method="get"  (ngSubmit)="test()">
+
+  EmployeeId:<input type="text" class="form-control col-sm-4" [(ngModel)]="id" name="id" >
+
+  EmployeeName:<input type="text" class="form-control col-sm-4" [(ngModel)]="name1" name="name1" >
+
+  Basic:<input type="text" class="form-control col-sm-4" [(ngModel)]="basic" name="basic" >
+  
+  HRA:<input type="text" class="form-control col-sm-4" [(ngModel)]="hra" name="hra" >
+
+  DA:<input type="text" class="form-control col-sm-4" [(ngModel)]="da" name="da" >
+
+  Deductions:<input type="text" class="form-control col-sm-4" [(ngModel)]="deduc" name="deduc" >
+
+  IncomeTax:<input type="text" class="form-control col-sm-4" [(ngModel)]="tax" name="tax" >
+  
+  <br>
+
+  <input type="submit" class="btn btn-success col-sm-2" name="submit" value="AddEmployee">
+
+  </form>
+
+  <br>
+  <br>
+
+  <p>ID: {{this.id}}</p>
+  <p>Name: {{this.name1}}</p>
+  <p>Salary: {{this.sum}}</p>  -->
+  
+<!-- ---------------------------------------------------------------------- -->
+
+
+
+    <!-- <h1>Angular</h1>
+    <html>
+      <body>
+
+    <div class="constainer">
+      <form #f="ngForm" method="get" (ngSubmit)="test()">
+        User Id<input type="text" class="form-control col-sm-4" [(ngModel)]="UID" name="UID"><br>
+        <input type="submit" class="btn btn-success col-sm-2" name="Submit">
+      </form>
+    </div>
+    <p> Data is :{{UID}}</p>
+    </body>
+    </html> -->
+
+
+    <!-- <div class="container">
+    <h3>Name Submission</h3>
+    <div class="container">
+      <form class="form-horizontal" #f1="ngForm" method="get" (ngSubmit)="showName()">
+        <b>Enter name</b>
+        <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" #UID="ngModel" required minlength="3" name="name1">
+        <div *ngIf="f1.submitted && UID.invalid">
+          <div *ngIf="UID.errors.required">Name is required</div>
+        </div>  
+
+        <div *ngIf="f1.submitted && UID.invalid">
+          <div *ngIf="UID.errors.minlength">Should enter minimum 3 letters</div>
+        </div>
+        <br>
+        <input type="submit" class="btn-success col-sm-2" name="Submit">
+      </form>
+      <br>
+      <br>
+      <div *ngIf="f1.submitted">
+      <p onclick="addName()"><b>{{addName()}}</b></p>
+      </div>
+    </div>
+    </div>
+   -->
+
+<!-- ----------------------LAB3--------------------------------
+   <h2>Form :Rishabh Pandey</h2>
+   <script>
+     productOnline()
+     {
+      var x = document.getElementById("yes").value;
+     }
+   </script>
+  <div class="container">
+  <form class="form-horizontal" #f1="ngForm"  method="get" (ngSubmit)="addNames()">
+    ProductId:<input type="text" class="form-control col-sm-4" [(ngModel)]="ID" name="ID" #UID1="ngModel" required minlength="6">
+    
+    
+    <div *ngIf="f1.submitted && UID1.invalid">
+      <div *ngIf="UID1.errors.required">Id is required</div>
+    </div>
+    
+
+    ProductName:<input type="text" class="form-control col-sm-4" [(ngModel)]="name" name="name" #Name1="ngModel" required minlength="3">
+    <div *ngIf="f1.submitted && Name1.invalid">
+      <div *ngIf="Name1.errors.required">Name is required</div>
+    </div>
+    
+
+    <div *ngIf="f1.submitted && Name1.invalid">
+      <div *ngIf="Name1.errors.minlength">Should enter minimum 6 characters..</div>
+    </div>
+    
+
+    ProductCost:<input type="number" class="form-control col-sm-4" [(ngModel)]="cost" name="cost" #Cost1="ngModel" required minlength="3">
+
+    <div *ngIf="f1.submitted && Cost1.invalid">
+      <div *ngIf="Cost1.errors.required">Should enter proper cost ....</div>
+    </div>
+    
+<br>
+
+ProductOnline:<div class="form-check-inline">
+  <label class="form-check-label" for="yes">
+    <input type="radio" class="form-check-input" id="yes" name="yes"    [(ngModel)]="yes" value="Yes" checked>Yes
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label" for="yes">
+    <input type="radio" class="form-check-input" id="no" name="no" [(ngModel)]="no" value="no">No
+  </label>
+</div>
+
+<br>
+<br>
+
+
+
+<label for="product">ProductCategory:</label>
+
+<select id="product" name="product"[(ngModel)]="product">
+  <option value="Maggi">Maggi</option>
+  <option value="Choclates" >Choclates</option>
+  <option value="Shampoo">Shampoo</option>
+  <option value="Soyabean chunks">Soyabean chunks</option>
+</select>
+    <br>
+<br>
+     <div class="form-group form-check" id="check" name="check" [(ngModel)]="check">
+       <label class = "checkbox-inline">
+        Available In store:<input type = "checkbox" id="check" value = "BigBazar" name="BigBazar" [(ngModel)]="BigBazar"  >Big Bazar
+     </label>
+     &nbsp; &nbsp;
+      <label class = "checkbox-inline">
+        <input type = "checkbox" value = "MegaStore" name="MegaStore" id="MegaStore" [(ngModel)]="MegaStore">Mega Store
+     </label>
+     &nbsp; &nbsp;
+     <label class = "checkbox-inline">
+        <input type="checkbox" value="Mart" name="Mart">Mart
+     </label>
+     &nbsp; &nbsp;
+     <label class = "checkbox-inline">
+        <input type = "checkbox" value = "">Reliance Store
+     </label>
+    </div>
+
+    <br>
+    
+    <button type="submit" class="btn btn-primary col-sm-2">AddProduct</button>
+    </form>
+    </div>
+  <p>The product id is ::{{ID}}</p>
+  <p>The product name is ::{{name}}</p>
+  
+  <p>The product cost is ::{{cost}}</p>
+  <p>Is product avilalable online?? ::{{t1}}</p>
+  
+  <p>The product selected is ::{{product}}</p>
+  <p>The product bought from is ::{{check}}</p>
+
+---------------------------------------------------------------------- -->
+
+
+<!-- <html>
+  <body > -->
+    
+    <!-- <div class="text-muted" class="bg-warning">
+    <h2 align="center">cReAteLiSt</h2>
+    </div>
+    <br>
+    <div class="text-muted" class="bg-warning">
+    </div>
+  <div class="container" align="center" class="bg-warning">
+    <form class="form-horizontal" #f1="ngForm"  method="get">
+      Name:<input type="text" class="form-control col-sm-4" [(ngModel)]="name1" name="name1" #UID1="ngModel" required minlength="6" id="name1">
+      <br>
+      <input type="submit" class="btn btn-success col-sm-2" name="Add">
+      <br>
+    </form>
+  </div>
+  <br> -->
+  <!-- <app-child1 [namesList]="namesArray"></app-child1> -->
+  <!-- <app-child1 (outputObj)='displayNames(this.name1)'></app-child1> -->
+
+  <!-- <h1 appHighlight1 class="col-sm-5" align="center"> this is me</h1>
+  <p>Upper & Lower: {{data | lowercase | uppercase}}</p>
+  <p>Item json pipe: {{data| json}}</p>
+  </body>
+  </html> -->
+
+
+
+<!-- ---------------LAB2.1------------------- -->
+<!-- EMPLOYEE DATA PAGE -->
+
+  <!-- <html>
+
+    
+    <body>
+      <div class="view" style="background-image: url('https://images.unsplash.com/photo-1545879456-d3f920f7c42a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=chuttersnap-Yj2xaiVOHC4-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+      <div class="container w-50 p-4 text-white">
+      <div class="jumbotron bg-transparent bg-primary" align="center">
+        
+        <form class="form-horizontal" #f1="ngForm" method="get" (ngSubmit)="addEmployee()">
+        
+          <h2 class=" text-white"> EmployeeDataEntry </h2>
+          <h4>Rishabh Pandey</h4>
+          ID <input type="text" class="form-control col-sm-4" [(ngModel)]="id1" name="id1" #UID="ngModel" required minlength="3" id="id1">
+
+          Name <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" name="name1" #Name1="ngModel" required minlength="5" id="name1">
+
+          Deptartment <input type="text" class="form-control col-sm-4" [(ngModel)]="dept" name="dept" #UID="ngModel" required minlength="3" id="dept">
+
+          Salary <input type="text" class="form-control col-sm-4" [(ngModel)]="salary" name="salary" #UID="ngModel" required minlength="3" id="salary">
+
+          <br>
+          <input type="submit" class="btn btn-success col-sm-4" name="submit" value="Add Employee">
+        </form>
+        
+        <app-child1 [eList]="EmployeeList"></app-child1>
+        </div>
+        </div>
+        </div>
+    </body>
+  </html> -->
+
+
+  <!-- SERVICES WORKING  -->
+
+
+  <!-- <html>
+    <body>
+      <div class="container jumbotron w-50 p-2" align="middle">
+
+        <form class="form-horizontal" #f1="ngForm" method="get" (ngSubmit)="displayAllData()">
+
+          <h4 class="text-white bg-dark"> NAME</h4><br>
+
+          <input type="text" class="form-control col-sm-6" [(ngModel)]="id1" name="id1" #UID="ngModel" id="id1">
+
+          <br>
+
+          <input type="submit" class="btn btn-success col-sm-4" name="submit" value="Add Name">
+
+        </form>
+        
+        </div>
+    </body>
+
+  </html> -->
+
+
+  <!-- <html>
+    <body>
+      <div class="jumbotron text-wight bg-black w-50 p-2" align="center">
+        Enter<input type="text" class="form-control col-sm-6" [(ngModel)]="enter" name="enter" id="enter">
+        <p *ngIf="enter=='true'">
+          <input type="submit" class="btn btn-success col-sm-4" name="submit" value="TRUE">
+        </p>
+        <p *ngIf="enter=='false'">
+          <input type="submit" class="btn btn-danger col-sm-4" name="submit" value="FALSE">
+        </p>
+      </div>
+    </body>
+  </html> -->
+
+  <!-- ROUTING PAGES -->
+
+<!-- <div class="jumbotron container w-50 p-2 bg-info" align="center">
+  <h2 class="text-white">Product Market</h2>
+  <h3 class="text-white">Diksha Srivastava</h3>
+  <div class="nav-link text-white">
+    <a [routerLink]="['/ProductListAll']">ProductListAll</a> &nbsp;
+    <a [routerLink]="['/ProductList',102]">Product List</a> &nbsp;
+    <a [routerLink]="['/ContactUs']">ContactUs</a>
+  </div>
+  </div>
+  <router-outlet></router-outlet> -->
+
+
+  <!-- ------JASON DATA LAB4----------- -->
+ 
+  <!-- <html>
+    <body>
+     <div class="jumbotron container w-50 p-2 bg-dark" align="center">
+     <form class="form-horizontal text-white" #f1="ngForm" method="get" (ngSubmit)="display()">
+    <h2 class="text-white">JSON DATA FOR ID</h2>
+    <h3 class="text-white">Rishabh Pandey</h3>
+    Enter ID<input type="text" class="form-control col-sm-4" [(ngModel)]="id1" name="id1" #UID="ngModel" id="id1"> 
+    <input type="submit" class="btn btn-danger col-sm-4" name="SHOW" value="SHOW" >
+    <br>
+    <div *ngIf="f1.submitted">
+      <app-child1></app-child1>
+    </div>
+    </form>
+<br>
+    <form class="form-horizontal" #f2="ngForm" method="get" (ngSubmit)="displayAll()">
+      <h2 class="text-white">All JSON DATA</h2>
+      <input type="submit" class="btn btn-danger col-sm-4" name="SHOW" value="SHOW" >
+      <br>
+      <div *ngIf="f2.submitted">
+        <app-child2></app-child2>
+      </div>
+      </form>
+
+  </div>
+</body>
+</html> -->
+
+
+<body>
+  <div class="jumbotron container w-50 p-2 bg-info" align="center">
+  <form class="form-horizontal " #f1="ngForm" method="get" (ngSubmit)="display()">
+ <h2 class="text-white">WELCOME TO MOVIE APP</h2>
+ <h3 class="text-white">Rishabh Pandey</h3>
+ <a href="#" class="text-dark">Add Movies</a>
+ <br>
+ <a href="#" class="text-dark">Search Movie By Categories</a>
+ <br>
+ Movie Name: <input type="text" class="form-control col-sm-4" required> 
+ 
+ Given Rating: <input type="text" class="form-control col-sm-4" required> 
+
+ Select Genre:<br>
+ <select id="Genre" name="Genre">
+  <option value="">--Select--</option>
+  <option value="Drama">Drama</option>
+  <option value="Friction">Friction</option>
+  <option value="Satire">Satire</option>
+</select>
+<br>
+ <input type="submit" class="btn btn-danger col-sm-4" name="SHOW" value="Add Movie" >
+ <br>
+ </form>
+ </div>
+
+ <body>
+  <div class="jumbotron container w-50 p-2 bg-info" align="center">
+  <form class="form-horizontal " #f1="ngForm" method="get" (ngSubmit)="display()">
+ <h2 class="text-white">WELCOME TO MOVIE APP</h2>
+ <h3 class="text-white">Rishabh Pandey</h3>
+ <a href="#" class="text-dark">Add Movies</a>
+ <br>
+ <a href="#" class="text-dark">Search Movie By Categories</a>
+ <br>
+ Search Movie:<br>
+ <select id="movie" name="movie">
+  <option value="">--Select--</option>
+  <option value="Drama">Drama</option>
+  <option value="Friction">Friction</option>
+  <option value="Satire">Satire</option>
+</select>
+<br><br>
+ <input type="submit" class="btn btn-danger col-sm-4" name="SHOW" value="Search Movie" >
+ <br><br><br>
+ <table class="table-info table-bordered">
+   <tr>
+     <td>Movie Name</td>
+     <td>Rating</td>
+   </tr>
+   <tr>
+     <td>Harry Potter</td>
+     <td>5</td>
+   </tr>
+   <tr>
+    <td>Load of the rings</td>
+    <td>4.5</td>
+   </tr>
+   <tr>
+    <td>Hollow</td>
+    <td>4.0</td>
+   </tr>
+ </table>
+ </form>
+ </div>
+
+
+ <body>
+  <div class="jumbotron container w-50 p-2 bg-info" align="center">
+  <form class="form-horizontal " #f1="ngForm" method="get" (ngSubmit)="display()">
+ <h2 class="text-white">WELCOME TO MOVIE APP</h2>
+ <h3 class="text-white">Rishabh Pandey</h3>
+ <h4 class="text-white">THANK YOU FOR FOR LOVE AND SUPPORT</h4>
+ <input type="submit" class="btn btn-dark col-sm-4" value="Contact US">

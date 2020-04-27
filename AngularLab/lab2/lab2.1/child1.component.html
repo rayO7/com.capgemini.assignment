@@ -1,0 +1,94 @@
+<!-- <div class="container">
+<div class="container" align="center" class="bg-warning">
+    <div *ngFor="let name of namesList">
+        <ul class="list-group">
+            <ol>
+            <li class="list-group-item col-sm-4" >{{name}}</li>
+            </ol>
+        </ul>
+    </div>
+</div>
+</div> -->
+
+<!-- <div class="container" align="center">
+    <form #f="ngForm">
+        <input type="button" (click)="sendData()" class="btn btn-success col-sm-2" value="Click">
+    </form>
+</div> -->
+
+    <br>
+    <h2 class=" text-white">Employee List</h2>
+    <br>
+    <table class="table table-sm table-bordered text-white" width="100">
+        <thead>
+        <tr>
+            <td>SNo.</td>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>DEPARTMENT</td>
+            <td>SALARY</td>
+            <td colspan="2" align="center">Action</td>
+        </tr>
+        <tr *ngFor="let emp of eList; let i=index;">
+            <th scope="col">{{i+1}}</th>
+            <th scope="col">{{emp.EmployeeId}}</th>
+            <th scope="col">{{emp.EmployeeName}}</th>
+            <th scope="col">{{emp.EmployeeDept}}</th>
+            <th scope="col">{{emp.EmployeeSalary}}</th>
+            <td scope="col" align="center">
+           <form class="form-group" #f2="ngForm" method="get">
+               <input type="button" class="btn btn-info" value="Update" name="update">
+           </form> 
+           </td>
+           <td scope="col" align="center">
+               <form class="button" #f3="ngForm" method="get">
+                   <input type="button" (click)="deleteEmployee(emp)" class="btn btn-danger" value="Delete" name="delete">
+               </form>
+           </td>
+         </tr>  
+
+        </thead>
+
+    </table>
+
+    <div class="container text-white" max-width='50%'>
+        
+        <form class="form-horizontal" #f1="ngForm" method="get" (ngSubmit)="updateEmployee()">
+
+          <h2 class=" text-white"> Update Employee </h2>
+
+          ID <input type="text" class="form-control col-sm-4" [(ngModel)]="id1" name="id1" #UID="ngModel" required minlength="3" id="id1">
+
+          Name <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" name="name1" #Name1="ngModel" required minlength="5" id="name1">
+
+          Deptartment <input type="text" class="form-control col-sm-4" [(ngModel)]="dept" name="dept" #UID="ngModel" required minlength="3" id="dept">
+
+          Salary <input type="text" class="form-control col-sm-4" [(ngModel)]="salary" name="salary" #UID="ngModel" required minlength="3" id="salary">
+
+          <br>
+          <input type="submit" class="btn btn-success col-sm-4" name="submit" value="Update">
+        </form>
+
+        </div>
+     
+    
+
+     <!-- <html>
+         <body>
+             <br>
+            <div class="container jumbotron p-2 bg-white" align ="center">
+                <table class="table table-hover table-line col-sm-5 table-dark table-bordered">
+                    <tr>
+                      <th>ID</th>
+                      <th>NAME</th>
+                     </tr>
+                  <tbody>
+                    <tr>
+                      <td>{{this.id2}}</td>
+                      <td>{{this.name2}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+         </body>
+     </html> -->

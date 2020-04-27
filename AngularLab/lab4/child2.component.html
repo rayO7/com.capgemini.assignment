@@ -1,0 +1,19 @@
+<html>
+         <body>
+             
+            <div class="container jumbotron p-2 bg-white" align ="center">
+                <table class="table table-hover table-line col-sm-5 table-dark table-bordered">
+                    <tr>
+                      <th>ID</th>
+                      <th>NAME</th>
+                     </tr>
+                  <tbody>
+                    <tr *ngFor="let book of BList">
+                      <td>{{book.id}}</td>
+                      <td>{{book.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+         </body>
+     </html>
