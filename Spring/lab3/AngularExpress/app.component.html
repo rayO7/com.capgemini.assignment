@@ -1,0 +1,14 @@
+<body>
+  <div class="jumbotron container w-50 p-2 bg-primary" align="center">
+
+ <form class="form-horizontal text-white" (ngSubmit)="OnSubmit()">
+  <h2 class="text-white">PRODUCT DETAILS</h2>
+  Id <input type="text" class="form-control col-sm-4" [(ngModel)]="id1" name="id1">
+  NAME <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" name="name1">
+  PRICE <input type="text" class="form-control col-sm-4" [(ngModel)]="price1" name="price1">
+ <br>
+  <input type="submit" class="btn btn-info col-sm-4" >
+ <br>
+ </form>
+ </div>
+ </body>
